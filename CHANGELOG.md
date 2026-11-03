@@ -4,57 +4,37 @@ All notable changes to Pigeon Enhanced Check are documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html):
 
-- **Major** versions can need changes to your configuration, database or other resources. Read the **Upgrade notes**.
+- **Major** versions can need changes to your configuration or other resources. Read the **Upgrade notes**.
 - **Minor** versions add features without breaking existing setups.
 - **Patch** versions fix bugs only.
 
-<!--
-How to use this file:
-- Add every change under "Unreleased" as you make it, in the right group:
-  Added · Changed · Deprecated · Removed · Fixed · Security
-- When releasing, rename "Unreleased" to the version and date (YYYY-MM-DD), add a fresh empty "Unreleased" above it,
-  and update the comparison links at the bottom.
-- Write for server owners: what changed for them, not how the code changed.
-- Credit contributors with their username, e.g. "(thanks @username)".
-- Security fixes: say what's fixed and that owners should update, without describing how to exploit it.
-- On GitLab, the comparison links at the bottom use https://gitlab.com/pigeon-studios/<subgroup>/<project>/-/compare/v1.0.0...HEAD
-  and /-/tags/v1.0.0 instead.
--->
-
 ## [Unreleased]
 
-### Added
+## [1.0.0] - 2026-11-03
 
-### Changed
+First release.
 
-### Fixed
+### Highlights
 
-<!--
-Example of a full release entry:
-
-## [1.3.0] - 2026-11-02
-
-### Upgrade notes
-
-- Run `sql/migrations/1.3.0.sql` before restarting.
-- `Config.Cooldown` is now in seconds, not milliseconds. Divide your value by 1000.
+- Every started resource and the server's settings checked for FiveM for GTAV Enhanced
+- Blockers, changes, reviews and notes, each with what to do
+- Files and line numbers in the saved report
+- Every check based on Cfx.re's documentation
+- Read-only: changes nothing, sends nothing
 
 ### Added
 
-- Discord logging for admin actions, with a webhook set in `configuration/server.lua`.
-- German translation (thanks @username).
+- A check of every started resource and the server's settings for what changes in FiveM for GTAV Enhanced, based on Cfx.re's documentation, sorted into blockers, things to change, things to review and notes, each with what to do.
+- Blockers: escrowed resources and resource builders.
+- To change: OneSync off or in legacy mode, Legacy models and textures in `stream/` with no `stream_enhanced/`, C# resources, Mumble voice natives, removed voice convars, NUI calls to other resources' callbacks, server key-value storage, and developer mode through `moo`.
+- To review: data kept per player ID in resources that never handle `playerDropped`, and an enforced game build.
+- Notes: resources that only use the deprecated `stream/` folder, state bag handlers, convars that do nothing, and `sv_useAccurateSends` turned off.
+- A summary in the console when the server starts, the full report with the `enhancedcheck` command, and `enhancedcheck <resource>` for one resource.
+- The full report saved to `enhanced-report.txt`, with the files and line numbers each finding came from and a list of things to check by hand.
+- Folders listed with the sandbox's `io.readdir`, or `dir` and `ls` on older artifacts.
+- `Config.IncludeStopped` and `Config.Ignore` to choose what's checked.
+- Every message in `locales/`.
+- Update checker from the Pigeon Studios version registry.
 
-### Changed
-
-- The roll animation now plays for nearby players too.
-
-### Fixed
-
-- Cooldown didn't reset after a player reconnected.
-
-### Security
-
-- Fixed a server event that didn't check the player's job. All servers should update.
--->
-
-[Unreleased]: https://github.com/pigeon-studios-uk/pigeon-enhanced-check/commits/main
+[Unreleased]: https://github.com/pigeon-studios-uk/pigeon-enhanced-check/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/pigeon-studios-uk/pigeon-enhanced-check/releases/tag/v1.0.0

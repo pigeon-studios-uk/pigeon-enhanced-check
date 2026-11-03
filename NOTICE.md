@@ -7,23 +7,19 @@ Pigeon Enhanced Check is licensed under the terms in [LICENSE.md](LICENSE.md). T
 
 ## Included third-party material
 
-<!-- Everything shipped inside this repository or release zip that we didn't make: libraries, fonts, icons, sounds, images, models.
-     Include the licence text, or a link to it where the licence allows, and any notice the licence requires us to keep.
-     If there's nothing, replace the table with "None." -->
+None. Every file in Pigeon Enhanced Check was written by Pigeon Studios.
 
-| Component | Author | Licence | Used for | Location |
-|---|---|---|---|---|
-| Example Font | Example Foundry | [SIL Open Font License 1.1](https://openfontlicense.org/) | NUI text | `web/fonts/` |
-| Example Icons | Example | [MIT](https://opensource.org/license/mit) | NUI icons | `web/img/icons/` |
+## Optional resources (not included)
 
-## Dependencies (not included)
+These are separate resources that you install yourself if you want them. They're made by others and licensed under their own terms.
 
-These are separate resources that you install yourself. They're made by others and licensed under their own terms.
-
-| Resource | Author | Licence | Required? |
+| Resource | Author | Licence | Used for |
 |---|---|---|---|
-| [ox_lib](https://github.com/communityox/ox_lib) | Community Ox | LGPL-3.0 | Yes <!-- edit --> |
-| [oxmysql](https://github.com/communityox/oxmysql) | Community Ox | LGPL-3.0 | Yes <!-- edit --> |
+| [chat](https://github.com/citizenfx/cfx-server-data) | Cfx.re | MIT | Command replies in game (any chat resource that handles `chat:addMessage` works) |
+
+## Cfx.re documentation
+
+The checks, and the advice in the report, are based on Cfx.re's public documentation at https://docs.fivem.net, which the README and the report link to. Nothing from it is included beyond the names of natives, convars, files and tools.
 
 ## Trademarks and game content
 
