@@ -67,7 +67,7 @@ This resource does that for you. Start it on the server you have now, and it rea
 - **Read-only:** it never changes, starts, stops or writes to another resource. The only file it writes is its own report.
 - **Runs where you are:** made for checking a Legacy server before you move, and works on an Enhanced server too.
 - **One resource at a time:** `enhancedcheck <resource>` checks just one, handy for creators testing their own work.
-- **Translatable:** every message is in `locales/`.
+- **23 languages:** every message is in `locales/`, following ox_lib's language setting.
 - **Free:** use it on as many servers as you like.
 
 ## What it checks
@@ -248,7 +248,7 @@ All settings are in `configuration/config.lua`, each with a comment explaining i
 
 | Setting | Default | What it does |
 |---|---|---|
-| `Config.Locale` | `'en'` | Language file from `locales/` to use |
+| `Config.Locale` | `'auto'` | Language: `'auto'` follows ox_lib's language, or a code from `locales/` such as `'de'` |
 | `Config.CheckOnStart` | `true` | Check once when the server starts and print a short summary. Off, it only checks when the command is used |
 | `Config.StartDelaySeconds` | `20` | How long to wait after the server starts before checking, so every resource has started |
 | `Config.IncludeStopped` | `false` | Also check resources in your resources folder that aren't started. Off, only what the server actually runs is checked |
@@ -259,7 +259,17 @@ All settings are in `configuration/config.lua`, each with a comment explaining i
 
 ## Localisation
 
-Every message, including each check's advice, is in `locales/`. To translate, copy `locales/en.lua` to a new file named with the language's two-letter code (such as `de.lua`), change `Locales.en` to match (`Locales.de`), translate the text in quotes and set `Config.Locale`. Keep words in `{curly brackets}`, convar names, file names and commands as they are. We'd love it if you shared a translation back; see [Contributing](#contributing).
+Pigeon Enhanced Check comes in 23 languages: `en` English, `cs` Czech, `da` Danish, `de` German, `es` Spanish, `et` Estonian, `fi` Finnish, `fr` French, `hr` Croatian, `hu` Hungarian, `id` Indonesian, `it` Italian, `nl` Dutch, `no` Norwegian, `pl` Polish, `pt` Portuguese, `pt-br` Brazilian Portuguese, `ro` Romanian, `sl` Slovenian, `sv` Swedish, `tr` Turkish, `zh-cn` Simplified Chinese and `zh-tw` Traditional Chinese. They're the languages ox_lib ships, so your server may already have one set.
+
+With `Config.Locale = 'auto'` (the default), it uses ox_lib's language, so one line in `server.cfg` sets it for this and every other resource that follows ox_lib:
+
+```cfg
+setr ox:locale "de"
+```
+
+Use `setr`, not `set`, so players' games get it too. Without it, or for a language that isn't in `locales/`, the text is English. To choose a language for this resource only, set `Config.Locale` to its code, such as `'fr'` or `'pt-br'`.
+
+Every file was checked for missing text and placeholders, but not every translation has been read by a native speaker yet. If something reads wrong, please send a fix; see [Contributing](#contributing). To add a language, copy `locales/en.lua` to a new file named with the language's code (such as `ja.lua`), change `Locales.en` at the top to match (`Locales.ja`), and translate the text in quotes. Keep words in `{curly brackets}`, convar names, file names and commands as they are.
 
 ## How it works
 

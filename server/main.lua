@@ -11,7 +11,9 @@ local VERSION = GetResourceMetadata(RESOURCE, 'version', 0) or '?'
 local PREFIX = '^6[Pigeon Enhanced Check]^7 '
 
 local Files, Scan, Report = EnhancedCheck.Files, EnhancedCheck.Scan, EnhancedCheck.Report
-Report.strings = Locales[Config.Locale] or Locales.en
+-- 'auto' follows ox_lib's language (the ox:locale convar), and English when that isn't set.
+local locale = Config.Locale == 'auto' and GetConvar('ox:locale', 'en') or Config.Locale
+Report.strings = Locales[locale] or Locales.en
 local t = Report.t
 
 -- Let the server breathe between resources while a big server is checked.
