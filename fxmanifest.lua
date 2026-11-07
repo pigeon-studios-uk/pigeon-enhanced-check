@@ -5,7 +5,7 @@ lua54 'yes'
 name 'pigeon-enhanced-check'
 author 'Pigeon Studios'
 description 'Scans your server\'s resources and settings and lists what to change before moving to FiveM for GTAV Enhanced.'
-version '1.0.0'
+version '1.1.0'
 repository 'https://github.com/pigeon-studios-uk/pigeon-enhanced-check'
 
 -- Pigeon Studios version registry entry, read by server/version_check.lua.
